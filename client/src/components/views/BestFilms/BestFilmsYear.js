@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {Typography, Menu, Dropdown, Icon, Row } from 'antd'
+import {Typography, Menu, Dropdown, Icon, Row, Select } from 'antd'
 import GridCard from '../../commons/GridCards'
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../../Config'
 
+
+const {Option } = Select;
 
 const { Title } = Typography;
 function BestFilmsYear() {
@@ -45,8 +47,8 @@ function BestFilmsYear() {
     }
 
 
-    const change = (event) => {
-      setYear({value: event.target.value})
+    const change = (value) => {
+      setYear(value)
     }
 
 
@@ -54,19 +56,19 @@ function BestFilmsYear() {
 
         <div>
             <div  align="center" padding="40px" margin="40px" >
-               <select id="lang" onChange={e => setYear(e.currentTarget.value)} value={Year}>
-                  <option value="2010">2010</option>
-                  <option value="2011">2011</option>
-                  <option value="2012">2012</option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-               </select>
+               <Select id="lang" onChange={change} defaultValue={Year}>
+                  <Option value="2010">2010</Option>
+                  <Option value="2011">2011</Option>
+                  <Option value="2012">2012</Option>
+                  <Option value="2013">2013</Option>
+                  <Option value="2014">2014</Option>
+                  <Option value="2015">2015</Option>
+                  <Option value="2016">2016</Option>
+                  <Option value="2017">2017</Option>
+                  <Option value="2018">2018</Option>
+                  <Option value="2019">2019</Option>
+                  <Option value="2020">2020</Option>
+               </Select>
                
                
            </div>
